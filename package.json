@@ -1,5 +1,5 @@
 {
-  "name": "number-geez-module",
+  "name": "number-geez",
   "version": "1.0.0",
   "description": "This module converts Arabic to Ethiopian number(geez) ",
   "main": "index.js",

@@ -1,9 +1,12 @@
 
-var asciiToGeez = (paramn) =>{
-
+module.exports = (paramn) =>{
+   var number = isNatural(paramn);
+if (number)
+{  
+   
      var param =paramn.toString();
 
-    var geezAsciiPair = {
+    var geezArabicPair = {
         '0' : '',
         '1' : '፩',
         '2' : '፪',
@@ -34,26 +37,25 @@ var asciiToGeez = (paramn) =>{
     
      if(paramn==100) // already represnted number
      {
-         return geezAsciiPair[paramn];
+         return geezArabicPair[paramn];
      }
      else if (paramn==10000) // already represnted number
      {
-        return geezAsciiPair[paramn];
+        return geezArabicPair[paramn];
 
      }
 
     for(var i=0 ; i<length; i+=2) // skip in two step coz grouped in pairs
     {
-      var stringAscii = param[i] + param[i+1];
+      var stringArabic = param[i] + param[i+1];
       ///from left to right
       var subscript = length/2 - index;
      /// conver to number
-      var numAscii = Number(stringAscii); 
-      
-      var numAscii2 = numAscii%10;
-      var numAscii1 = numAscii - numAscii2;
+      var numArabic = Number(stringArabic); 
+      var numArabic2 = numArabic%10;//numArabic2 and numArabic1 are the second and first digit of the converted number respectively
+      var numArabic1 = numArabic - numArabic2;
       ///map number to geez
-      var numGeez = geezAsciiPair[numAscii1] + geezAsciiPair[numAscii2];
+      var numGeez = geezArabicPair[numArabic1] + geezArabicPair[numArabic2];
      
       if(subscript%2==0 && subscript!=0)//even subscript
          numGeez = numGeez + '፼';
@@ -62,12 +64,21 @@ var asciiToGeez = (paramn) =>{
 
     finalGeez = finalGeez + numGeez;
     index++;
-
-
     }
 
 
  return finalGeez;
+   }
+
+ else{
+   console.log("Please insert a valid number!")
+   return false;
+    }
 }
 
-  //console.log('geez ' , asciiToGeez(10000));
+var isNatural = (num)=>{
+    num=num.toString();
+    var num1 = Math.abs(num),num2 = parseInt(num,10);
+    return !isNaN(num1) && num2===num1 && num1.toString()===num;
+};
+
