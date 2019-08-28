@@ -1,6 +1,6 @@
-# number-geez-module
+# number-geez
 
-number-geez-module is a npm library for converting Arabic number to Ethiopian number (Geez).
+number-geez is a npm library for converting Arabic number to Ethiopian number (Geez).
 
 ## Installation
 
@@ -13,15 +13,11 @@ npm install number-geez
 ## Usage
 
 ```Node.js
-var ntg = require('number-geez')
+var numberToGeez = require('number-geez')
 
-ntg(1) # returns ፩
+numberToGeez(1) # returns ፩
 ```
 
-## Contributing
-Pull requests are open. 
-
-Please make sure to update tests as appropriate.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+MIT License

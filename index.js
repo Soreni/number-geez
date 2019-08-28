@@ -81,4 +81,3 @@ var isNatural = (num)=>{
     var num1 = Math.abs(num),num2 = parseInt(num,10);
     return !isNaN(num1) && num2===num1 && num1.toString()===num;
 };
-
