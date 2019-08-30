@@ -55,11 +55,16 @@ if (number)
       var numArabic2 = numArabic%10;//numArabic2 and numArabic1 are the second and first digit of the converted number respectively
       var numArabic1 = numArabic - numArabic2;
       ///map number to geez
-      var numGeez = geezArabicPair[numArabic1] + geezArabicPair[numArabic2];
+      var numGeez='';
+      if(i!=0 || stringArabic!='01' )
+      {
+       numGeez = geezArabicPair[numArabic1] + geezArabicPair[numArabic2];
+  
+      }
      
-      if(subscript%2==0 && subscript!=0)//even subscript
+      if(subscript%2==0 && subscript!=0 && numArabic!=0)//even subscript
          numGeez = numGeez + '፼';
-      else if (subscript%2 !=0 && subscript!=0)//odd subscript
+      else if (subscript%2 !=0 && subscript!=0 && stringArabic!=="00")//odd subscript
           numGeez = numGeez + '፻';
 
     finalGeez = finalGeez + numGeez;
@@ -68,6 +73,7 @@ if (number)
 
 
  return finalGeez;
+
    }
 
  else{
